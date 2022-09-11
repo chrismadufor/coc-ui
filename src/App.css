@@ -30,7 +30,20 @@ button {
     display: block;
 }
 
+.contact-btn {
+    background-color: var(--text-teal);
+    color: white;
+}
+
 button:focus {
+    outline: none;
+}
+
+input, textarea {
+    background-color: transparent;
+}
+
+input:focus, textarea:focus {
     outline: none;
 }
 
