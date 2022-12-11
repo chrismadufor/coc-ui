@@ -33,7 +33,7 @@ function Home() {
       <Header />
       <section className="hero plus-jarkarta flex flex-col lg:flex-row items-center justify-center lg:justify-between pt-32 lg:h-screen xl:pl-20 lg:pt-20">
         <div className="text-center mb-10 lg:mb-0 lg:text-left mx-auto max-w-lg xl:max-w-3xl xl:pl-0">
-          <h1 className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl">
             In the beginning God created the heavens and the earth
           </h1>
           <p className="text-base md:text-xl lg:text-2xl max-w-md mt-3 mx-auto lg:mx-0">
