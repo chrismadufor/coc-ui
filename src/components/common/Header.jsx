@@ -8,9 +8,9 @@ function Header() {
   return (
     <div className="fixed t-0 w-full z-10">
       <header className="flex justify-between items-center bg-black text-white h-16 px-side">
-        <div onClick={() => navigate('/')} className="flex items-center logo">
+        <Link to="/" className="flex items-center logo">
           <img className="w-52" src={logo} alt="" />
-        </div>
+        </Link>
         <ul className="links hidden xl:flex justify-between items-center font-semibold plus-jarkata text-sm tracking-wider">
           <li className="uppercase ml-8">Stories</li>
           <li className="uppercase ml-8">About COC</li>

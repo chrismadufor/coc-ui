@@ -1,30 +1,31 @@
 import React from "react";
 import Header from "../common/Header";
-import arrowRight from '../../assets/svg/arrow-right.svg'
-import longArrow from '../../assets/svg/long-arrow.svg'
-import verse from '../../assets/svg/verse.svg'
-import phone from '../../assets/svg/phone.svg'
-import calendar from '../../assets/svg/calendar.svg'
-import radio from '../../assets/svg/radio.svg'
-import podcasts from '../../assets/svg/podcasts.svg'
-import arrowUp from '../../assets/svg/arrow-up-right-black.svg'
-import pin from '../../assets/svg/pin.svg'
-import maps from '../../assets/svg/maps.svg'
-import img1 from '../../assets/hero-img1.png'
-import img2 from '../../assets/hero-img2.png'
-import img3 from '../../assets/hero-img3.png'
-import img4 from '../../assets/hero-img4.png'
-import img5 from '../../assets/hero-img5.png'
-import img6 from '../../assets/hero-img6.png'
-import img7 from '../../assets/hero-img7.png'
-import eventImg from '../../assets/event.jpg'
-import heap from '../../assets/heap.png'
-import psalms from '../../assets/psalms.png'
-import blog1 from '../../assets/blog1.png'
-import blog2 from '../../assets/blog2.png'
-import blog3 from '../../assets/blog3.png'
-import about from '../../assets/about.png'
+import arrowRight from "../../assets/svg/arrow-right.svg";
+import longArrow from "../../assets/svg/long-arrow.svg";
+import verse from "../../assets/svg/verse.svg";
+import phone from "../../assets/svg/phone.svg";
+import calendar from "../../assets/svg/calendar.svg";
+import radio from "../../assets/svg/radio.svg";
+import podcasts from "../../assets/svg/podcasts.svg";
+import arrowUp from "../../assets/svg/arrow-up-right-black.svg";
+import pin from "../../assets/svg/pin.svg";
+import maps from "../../assets/svg/maps.svg";
+import img1 from "../../assets/hero-img1.png";
+import img2 from "../../assets/hero-img2.png";
+import img3 from "../../assets/hero-img3.png";
+import img4 from "../../assets/hero-img4.png";
+import img5 from "../../assets/hero-img5.png";
+import img6 from "../../assets/hero-img6.png";
+import img7 from "../../assets/hero-img7.png";
+import eventImg from "../../assets/event.jpg";
+import heap from "../../assets/heap.png";
+import psalms from "../../assets/psalms.png";
+import blog1 from "../../assets/blog1.png";
+import blog2 from "../../assets/blog2.png";
+import blog3 from "../../assets/blog3.png";
+import about from "../../assets/about.png";
 import Footer from "../common/Footer";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -38,9 +39,11 @@ function Home() {
           <p className="text-base md:text-xl lg:text-2xl max-w-md mt-3 mx-auto lg:mx-0">
             In the begining God created the heavens and the earth
           </p>
-          <button className="bg-pry text-white py-1 md:py-2 px-5 md:px-14 lg:px-16 mt-8 mx-auto lg:mx-0 text-base md:text-lg rounded-md flex items-center whitespace-nowrap">
-            Join Us <img className="ml-2" src={arrowRight} alt="" />
-          </button>
+          <Link to="/contact">
+            <button className="bg-pry text-white py-1 md:py-2 px-5 md:px-14 lg:px-16 mt-8 mx-auto lg:mx-0 text-base md:text-lg rounded-md flex items-center whitespace-nowrap">
+              Join Us <img className="ml-2" src={arrowRight} alt="" />
+            </button>
+          </Link>
         </div>
         <div className="pic-grid max-w-sm lg:max-w-lg grid grid-cols-3">
           <div>
@@ -79,11 +82,7 @@ function Home() {
           </div>
           <div className="h-48 w-72 bg-black text-white flex flex-col justify-center px-5 pl-8 border-2 border-black rounded-b-xl">
             <h2 className="trirong text-3xl">Request a Home Visit</h2>
-            <img
-              className="w-16 mt-8 ml-auto mr-5"
-              src={longArrow}
-              alt=""
-            />
+            <img className="w-16 mt-8 ml-auto mr-5" src={longArrow} alt="" />
           </div>
         </div>
         <div className="max-w-4xl">
@@ -228,8 +227,7 @@ function Home() {
             </p>
           </div>
           <p className="flex items-center uppercase font-semibold text-sm">
-            Matthew 18:1-5{" "}
-            <img className="w-2 ml-2" src={verse} alt="" />
+            Matthew 18:1-5 <img className="w-2 ml-2" src={verse} alt="" />
           </p>
           <div className="flex items-center my-5 ">
             <img className="w-4 mr-2" src={pin} alt="" />
@@ -277,9 +275,11 @@ function Home() {
             alt=""
           />
         </div>
-        <button className="bg-pry text-white py-1 md:py-2 px-8 md:px-16 mt-8 text-lg rounded-md flex items-center whitespace-nowrap block mx-auto">
-          Join Us <img className="ml-2" src={arrowRight} alt="" />
-        </button>
+        <Link to="/contact">
+          <button className="bg-pry text-white py-1 md:py-2 px-8 md:px-16 mt-8 text-lg rounded-md flex items-center whitespace-nowrap block mx-auto">
+            Join Us <img className="ml-2" src={arrowRight} alt="" />
+          </button>
+        </Link>
       </section>
       <section className="gallery pt-8 md:pt-14 xl:pt-20 pb-10 xl:pb-28 px-side">
         <div className="heading mb-10">

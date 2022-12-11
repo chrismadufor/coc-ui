@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import tent from "../../assets/svg/tent.svg";
@@ -11,6 +12,7 @@ import arrowUp from "../../assets/svg/arrow-up-right-black.svg";
 import { useFormik } from "formik";
 
 function Contact() {
+  const form = useRef();
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -42,42 +44,36 @@ function Contact() {
       return errors;
     },
     onSubmit: (values, { setSubmitting }) => {
-      //   setTimeout(() => {
-      //     const data = {...values, phone: phoneNum}
-      //     emailjs
-      //       .send(
-      //         serviceId,
-      //         templateId,
-      //         data,
-      //         publicKey
-      //       )
-      //       .then(
-      //         (result) => {
-      //           console.log(result.text);
-      //         },
-      //         (error) => {
-      //           console.log(error.text);
-      //         }
-      //       );
-      //     alert("Thank you for reaching out. We will contact you shortly.");
-      //     setSubmitting(false);
-      //   }, 400);
-      //   setPhoneNum("")
-      alert(values.fullName);
+      const data = values;
+      console.log(data, process.env.REACT_APP_SERVICEID);
+      emailjs
+        .send(
+          "service_d3az6au",
+          "template_u22vh9k",
+          data,
+          "user_JnkbPpytmFMhAyAWo3zVs"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Thank you for reaching out. We will contact you shortly.");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      setSubmitting(false);
       formik.resetForm();
     },
   });
   return (
     <div>
       <Header />
-      <section className="contact-hero lg:h-screen plus-jarkarta pt-32 xl:px-20 lg:pt-20 px-side py-10">
-        <h1 className="text-4xl lg:text-5xl md:my-8 lg:mt-14 text-center">
-          We will be be more than glad to have you around
-        </h1>
-        <div className="md:flex justify-between max-w-4xl mx-auto">
+      <section className="contact-hero md:flex items-center justify-center lg:h-screen plus-jarkarta pt-32 xl:px-20 lg:pt-20 px-side py-10">
+        <div className="md:flex justify-between max-w-5xl gap-8 mx-auto">
           <div className="my-8 w-full md:w-1/2">
-            <h1 className="text-2xl sm:text-3xl mb-4 hidden md:block">
-              Reach Out To Us
+            <h1 className="text-4xl lg:text-5xl md:my-8 lg:mt-14">
+              We will be be more than glad to have you around
             </h1>
             <div className="address flex flex-col justify-center my-3 md:my-5">
               <div className="flex items-center mb-5">
@@ -95,15 +91,15 @@ function Contact() {
             <div className="socials flex items-center my-2 md:my-5">
               <p className="uppercase font-semibold">Follow us</p>
               <div className="social-icons flex items-center ml-3">
-                <img className="w-8 md:w-10 mr-2" src={fb} alt="" />
-                <img className="w-8 md:w-10 mr-2" src={ig} alt="" />
-                <img className="w-8 md:w-10 mr-2" src={yt} alt="" />
+                <img className="w-8 md:w-10 mr-2 cursor-pointer" src={fb} alt="" />
+                <img className="w-8 md:w-10 mr-2 cursor-pointer" src={ig} alt="" />
+                <img className="w-8 md:w-10 mr-2 cursor-pointer" src={yt} alt="" />
               </div>
             </div>
           </div>
           <div className="w-full md:w-1/2 max-w-md my-8">
             <h1 className="text-2xl sm:text-3xl mb-4">Drop A Message</h1>
-            <form onSubmit={formik.handleSubmit}>
+            <form ref={form} onSubmit={formik.handleSubmit}>
               <div className="border border-2 rounded-lg">
                 <input
                   type="text"
@@ -161,9 +157,9 @@ function Contact() {
           width="100%"
           height="300"
           style={{ border: 0 }}
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
       <Footer />
